@@ -10,4 +10,8 @@ Script modifications (for individual student environment includes)
 - AWS_ACCESS_KEY_ID 
 - AWS_SECRET_ACCESS_KEY
 - MODEL_ID
-- us-east-1 (confirm set to us-west-2)
+- us-east-1 (confirm region is set to us-east-1, ML is not supported in the "normal" us-west-2 or many other regions for that matter)
+
+Make sure
+- Grab the correct model ID (easy to grab an evaluation ID)
+- The real-time endpoint is enabled for your model (done w/in the ML console, actual endpoint is fetched via the SDK API call)
