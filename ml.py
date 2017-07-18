@@ -4,7 +4,7 @@ from boto3.session import Session
 
 session = Session(aws_access_key_id='AWS_ACCESS_KEY_ID', aws_secret_access_key='AWS_SECRET_ACCESS_KEY')
 
-machinelearning = session.client('machinelearning', region_name='us-east-1')
+machinelearning = session.client('machinelearning', region_name='us-west-2')
 
 model_id = 'MODEL_ID'
 
