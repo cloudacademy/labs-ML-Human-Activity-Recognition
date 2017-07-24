@@ -12,26 +12,26 @@ labels = {'1': 'walking', '2': 'walking upstairs', '3': 'walking downstairs', '4
 
 try:
 
-    model = machinelearning.get_ml_model(MLModelId=model_id)
+    model = machinelearning.get_ml_model(MLModelId=model_id)
 
-    prediction_endpoint = model.get('EndpointInfo').get('EndpointUrl')
+    prediction_endpoint = model.get('EndpointInfo').get('EndpointUrl')
 
-    with open('record.csv') as f:
+    with open('record.csv') as f:
 
-        record_str = f.readline()
+        record_str = f.readline()
 
-    record = {}
+    record = {}
 
-    for index,val in enumerate(record_str.split(',')):
+    for index,val in enumerate(record_str.split(',')):
 
-        record['Var%03d' % (index+1)] = val
+        record['Var%03d' % (index+1)] = val
 
-    response = machinelearning.predict(MLModelId=model_id, Record=record, PredictEndpoint=prediction_endpoint)
+    response = machinelearning.predict(MLModelId=model_id, Record=record, PredictEndpoint=prediction_endpoint)
 
-    label = response.get('Prediction').get('predictedLabel')
+    label = response.get('Prediction').get('predictedLabel')
 
-    print("You are currently %s." % labels[label])
+    print("You are currently %s." % labels[label])
 
 except Exception as e:
 
-    print(e)
+    print(e)
